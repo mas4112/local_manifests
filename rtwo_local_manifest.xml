@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+  <!-- room-runtime fix: pin ExtServices to stable AOSP tag -->
+  <remove-project name="platform/packages/modules/ExtServices" />
+  <project
+    path="packages/modules/ExtServices"
+    name="platform/packages/modules/ExtServices"
+    groups="pdk-cw-fs,pdk-fs"
+    remote="aosp"
+    revision="android-16.0.0_r1" />
+
   <!-- device trees -->
   <project name="LineageOS/android_device_motorola_sm8550-common" path="device/motorola/sm8550-common" remote="github" revision="lineage-23.2"/>
   <project name="mas4112/android_device_motorola_rtwo" path="device/motorola/rtwo" remote="github" revision="crD-16.0"/>
@@ -12,8 +21,7 @@
   <!-- vendor -->
   <project name="TheMuppets/proprietary_vendor_motorola_sm8550-common" path="vendor/motorola/sm8550-common" remote="github" revision="lineage-23.2"/>
   <project name="TheMuppets/proprietary_vendor_motorola_rtwo" path="vendor/motorola/rtwo" remote="github" revision="lineage-23.2"/>
-  
-  <!-- Add the LineageOS version to motorola hardware path -->
-  <project name="LineageOS/android_hardware_motorola" path="hardware/motorola" remote="github" revision="lineage-23.2"/> 
-</manifest>
 
+  <!-- hardware -->
+  <project name="LineageOS/android_hardware_motorola" path="hardware/motorola" remote="github" revision="lineage-23.2"/>
+</manifest>
